@@ -1,0 +1,12 @@
+# render.yaml — Render Blueprint (Infrastructure as Code)
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: render-docker-demo
+    runtime: docker         # tells Render to use the Dockerfile
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon          # change to: frankfurt | singapore | ohio | virginia
+    branch: main
+    healthCheckPath: /      # Render pings this to confirm the service is up
